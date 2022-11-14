@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 #include "middle.h"
 
@@ -102,15 +100,45 @@ int itc_null_count(long long number){
 
 }
 
-bool itc_mirror_num(long long number){/////////////////////
-bool zifra,x,y;
-    while (number > 0){
-        zifra = number % 10;
-        zifra =
+bool itc_mirror_num(long long number){
+int zifra,x,y,b;
+    y = 0;
+    b = number;
+    if (b / 10 != 0 )
+        {
+            if (b > 0)
+                {
+                    while (b > 0)
+                    {
+                        zifra = b % 10;
+                        y =  y*10  + zifra;
+                        b = b / 10;
+                    }
+
+            if (number == y)
+                return 1;
+                    return 0;
+                }
+                else
+                {
+                    b = b * (-1);
+                    while (b > 0)
+                    {
+                        zifra = b % 10;
+                        y =  y*10  + zifra;
+                        b = b / 10;
+                    }
+
+            if (number == y * (-1))
+                return 1;
+                    return 0;
+                }
+        }
+    return -1;
 
 
-    }
 
 
 
 
+}
